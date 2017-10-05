@@ -20,13 +20,13 @@ public class HJ extends Critter {
         leftLeg.setStrokeColor(strokeColor);
         leftLeg.setFilled(true);
         leftLeg.setFillColor(fillColor);
-        addLeg(new Leg(leftLeg, 10));       // this leg will be animated when running CritterProgram
+        addLeg(new Leg(leftLeg, 30));       // this leg will be animated when running CritterProgram
 
         Rectangle rightLeg  = new Rectangle(80, 100, 10, 80);
         rightLeg.setStrokeColor(strokeColor);
         rightLeg.setFilled(true);
         rightLeg.setFillColor(fillColor);
-        addLeg(new Leg(rightLeg, 10));     // this leg will be animated when running CritterProgram
+        addLeg(new Leg(rightLeg, 30));     // this leg will be animated when running CritterProgram
 
 
         Image HJ = null;
