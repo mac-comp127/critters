@@ -31,6 +31,7 @@ public class Doraemon extends Critter {
         rightLeg.setFillColor(fillColor);
         addLeg(new Leg(rightLeg, 10));
 
+
         Image doraemon = null;
         try{
             doraemon = new Image(0,0, Paths.get(getClass().getResource("/doraemon.png").toURI()).toString());
@@ -38,5 +39,7 @@ public class Doraemon extends Critter {
             e.printStackTrace();
         }
         getGraphics().add(doraemon);
+        addEye(new Eye(15, 0.5, 0.18, Color.WHITE), 100, 60);
+        addEye(new Eye(15, 0.5, 0.18, Color.WHITE), 120, 60);
     }
 }
