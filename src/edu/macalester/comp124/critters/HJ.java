@@ -31,7 +31,7 @@ public class HJ extends Critter {
 
         Image HJ = null;
         try{
-            HJ = new Image(0,0, Paths.get(getClass().getResource("/HJ.jpg").toURI()).toString());
+            HJ = new Image(0,0, Paths.get(getClass().getResource("/HJ.png").toURI()).toString());
         } catch (URISyntaxException e){
             e.printStackTrace();
         }
