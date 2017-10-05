@@ -7,6 +7,10 @@ import java.awt.Color;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
 
+/**
+ * @author clintonkunhardt
+ */
+
 public class AdrienBrody extends Critter {
 
     private static final Color STROKE_COLOR = new Color(233, 159, 121);

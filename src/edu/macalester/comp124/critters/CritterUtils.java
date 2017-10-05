@@ -1,5 +1,10 @@
 package edu.macalester.comp124.critters;
 
+import comp124graphics.Image;
+
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
+
 public final class CritterUtils {
     
     /**
@@ -7,6 +12,16 @@ public final class CritterUtils {
      */
     public static double blend(double a, double b, double w) {
         return a * w + b * (1-w);
+    }
+
+	/**
+     *
+     * @param name Image name and extension
+     * @return Image object with the specified image, null if not found
+     */
+    public static Image fetchImageInPackage(Object instance, String name) throws URISyntaxException
+    {
+        return new Image(0,0, Paths.get(instance.getClass().getResource("/"+ name).toURI()).toString());
     }
 
 }
