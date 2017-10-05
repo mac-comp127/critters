@@ -7,6 +7,10 @@ import java.awt.Color;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
 
+/**
+ * @author clintonkunhardt
+ */
+
 public class MrOrange extends Critter {
 
     private static final Color STROKE_COLOR = new Color(233, 159, 121);
@@ -16,13 +20,14 @@ public class MrOrange extends Critter {
     protected void buildGraphics(){
 
         try {
-            Image rightLeg = new Image(67,97, Paths.get(getClass().getResource("/OrangeRightLeg.png").toURI()).toString());
-            Image leftLeg = new Image(8,87, Paths.get(getClass().getResource("/OrangeLeftLeg.png").toURI()).toString());
-            //getGraphics().add(rightLeg);
-            //getGraphics().add(leftLeg);
-            addLeg(new Leg(rightLeg, 5));
-            addLeg(new Leg(leftLeg, 5));
-            //makeRectLegs();
+            Image rightLeg = new Image(92,97, Paths.get(getClass().getResource("/OrangeRightLeg.png").toURI()).toString());
+            Image leftLeg = new Image(60,87, Paths.get(getClass().getResource("/OrangeLeftLeg.png").toURI()).toString());
+
+
+            //addLeg(new Leg(rightLeg, 10));
+            //addLeg(new Leg(leftLeg, 10));
+            // Image legs are being weird, so just add rectangle legs for now.
+            makeRectLegs();
         } catch (URISyntaxException e){
             e.printStackTrace();
             makeRectLegs();
@@ -56,5 +61,4 @@ public class MrOrange extends Critter {
         addLeg(new Leg(rightLeg, 10));
         addLeg(new Leg(leftLeg, 10));
     }
-
 }
