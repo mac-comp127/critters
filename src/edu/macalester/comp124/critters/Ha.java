@@ -6,7 +6,9 @@ import java.awt.Color;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
 
-
+/**
+ * @author Shiyu Lin
+ */
 
 
 public class Ha extends Critter {
