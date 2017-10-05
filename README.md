@@ -13,7 +13,7 @@ Take a look at BoxBot, RoundBug, and Mario as examples, then create some new Cri
 
 We recommend beginning by studying one of the existing critters. 
 
-**impotant notes:** 
+** Important notes:** 
 
 * These critter's legs are designed to be animated. Look at the examples to see where we have documented this. You will need to make sure that you add legs to the critter that you build, so it will look good as it moves around the screen.
 * If you want to use an image like was done with Mario, make sure that your image is small enough that the overall size of your critter fits in the CritterTestProgram window.
