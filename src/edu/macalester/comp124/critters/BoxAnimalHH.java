@@ -29,28 +29,28 @@ public class BoxAnimalHH extends Critter{
 
 
         //left back leg
-        comp124graphics.Rectangle leftBackLeg  = new comp124graphics.Rectangle(0, yBody-5, xLeg, yLeg);
+        comp124graphics.Rectangle leftBackLeg  = new comp124graphics.Rectangle(2, yBody-5, xLeg, yLeg);
         leftBackLeg.setStrokeColor(null);
         leftBackLeg.setFilled(true);
         leftBackLeg.setFillColor(fillColor);
         addLeg(new Leg(leftBackLeg, 2));   // this leg will be animated when running CritterProgram
 
         //left front leg
-        comp124graphics.Rectangle leftFrontLeg  = new comp124graphics.Rectangle(xLeg + 5, yBody-5, xLeg, yLeg);
+        comp124graphics.Rectangle leftFrontLeg  = new comp124graphics.Rectangle(xLeg + 7, yBody-5, xLeg, yLeg);
         leftFrontLeg.setStrokeColor(strokeColor);
         leftFrontLeg.setFilled(true);
         leftFrontLeg.setFillColor(fillColor);
         addLeg(new Leg(leftFrontLeg, 2));   // this leg will be animated when running CritterProgram
 
         //right back leg
-        comp124graphics.Rectangle rightBackLeg = new comp124graphics.Rectangle( xLeg*2 + 5 + 22, yBody-5, xLeg, yLeg);
+        comp124graphics.Rectangle rightBackLeg = new comp124graphics.Rectangle( xLeg*2 + 5 + 18, yBody-5, xLeg, yLeg);
         rightBackLeg.setStrokeColor(strokeColor);
         rightBackLeg.setFilled(true);
         rightBackLeg.setFillColor(fillColor);
         addLeg(new Leg(rightBackLeg, 2));   // this leg will be animated when running CritterProgram
 
         //right back leg
-        comp124graphics.Rectangle rightFrontLeg = new comp124graphics.Rectangle( xLeg*3 + 5 + 22 + 5, yBody-5, xLeg, yLeg);
+        comp124graphics.Rectangle rightFrontLeg = new comp124graphics.Rectangle( xLeg*3 + 5 + 18 + 5, yBody-5, xLeg, yLeg);
         rightFrontLeg.setStrokeColor(strokeColor);
         rightFrontLeg.setFilled(true);
         rightFrontLeg.setFillColor(fillColor);
