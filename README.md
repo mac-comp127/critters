@@ -22,6 +22,8 @@ We recommend beginning by studying one of the existing critters.
 
 Then create a brand new class that extends Critter and try your hand at building one of your own (spider, ladybug, etc.). Make sure that you use addLeg(new Leg(...)). You should test your new type of Critter by using the simple program called *CritterTestProgram*. Change it to create one of your type of Critter rather than one of the examples.
 
+You should add your name or initials to your class names and images to avoid git conflicts.
+
 
 The code in CritterProgram is written to automatically detect new critters, but does so randomly, so it is best to only use this once you have your new Critter drawing properly in the CritterTestProgram.
 
