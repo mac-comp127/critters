@@ -43,7 +43,7 @@ public class CrabCK extends Critter {
 
         Image crab = null;
         try{
-            crab = new Image(0,0, Paths.get(getClass().getResource("/CrabCK.png").toURI()).toString());
+            crab = new Image(0,0, Paths.get(getClass().getResource("/crabck.png").toURI()).toString());
         } catch (URISyntaxException e){
             e.printStackTrace();
         }
