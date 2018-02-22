@@ -37,6 +37,7 @@ public class Mario extends Critter {
 			e.printStackTrace();
 		}
 
+
 		getGraphics().add(mario);
 		
 		
