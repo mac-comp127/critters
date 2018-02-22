@@ -10,6 +10,9 @@ import java.awt.*;
 public class ToothMonster extends Critter{
     protected void buildGraphics() {
 
+        createAntennae(40, 40, 30, 10);
+        createAntennae(70, 40, 80, 10);
+
         Ellipse head = new Ellipse(30, 30, 50, 30);
         head.setFillColor(new Color(100, 150, 150));
         head.setFilled(true);
@@ -33,12 +36,22 @@ public class ToothMonster extends Critter{
         getGraphics().add(mouth);
     }
 
-    private void createLeg(double x1, double y1) {
-        comp124graphics.Rectangle leftTooth = new Rectangle(x1, y1, 10, 15);
+    private void createLeg(double x, double y) {
+        comp124graphics.Rectangle leftTooth = new Rectangle(x, y, 10, 15);
         leftTooth.setStrokeColor(Color.BLACK);
         leftTooth.setFilled(true);
         leftTooth.setFillColor(Color.WHITE);
         addLeg(new Leg(leftTooth, 2));
+    }
+
+    private void createAntennae(double x1, double y1, double x2, double y2) {
+        Line antennae = new Line(x1, y1, x2, y2);
+        antennae.setStrokeColor(new Color(50, 100, 200));
+        Ellipse bulb = new Ellipse(x2-5, y2-5, 10, 10);
+        bulb.setFillColor(new Color(50, 150, 200));
+        bulb.setFilled(true);
+        getGraphics().add(antennae);
+        getGraphics().add(bulb);
     }
 
 
