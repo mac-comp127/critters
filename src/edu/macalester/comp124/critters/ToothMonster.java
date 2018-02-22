@@ -28,6 +28,9 @@ public class ToothMonster extends Critter{
         createLeg(45, 50);
         createLeg(55, 50);
 
+        createBrow(30, 25);
+        createBrow(60, 25);
+
     }
 
     private void createMouth(double x1, double y1, double x2, double y2) {
@@ -37,11 +40,11 @@ public class ToothMonster extends Critter{
     }
 
     private void createLeg(double x, double y) {
-        comp124graphics.Rectangle leftTooth = new Rectangle(x, y, 10, 15);
-        leftTooth.setStrokeColor(Color.BLACK);
-        leftTooth.setFilled(true);
-        leftTooth.setFillColor(Color.WHITE);
-        addLeg(new Leg(leftTooth, 2));
+        comp124graphics.Rectangle tooth = new Rectangle(x, y, 10, 15);
+        tooth.setStrokeColor(Color.BLACK);
+        tooth.setFilled(true);
+        tooth.setFillColor(Color.WHITE);
+        addLeg(new Leg(tooth, 2));
     }
 
     private void createAntennae(double x1, double y1, double x2, double y2) {
@@ -52,6 +55,14 @@ public class ToothMonster extends Critter{
         bulb.setFilled(true);
         getGraphics().add(antennae);
         getGraphics().add(bulb);
+    }
+
+    private void createBrow(double x, double y) {
+        Rectangle brow = new Rectangle(x, y, 20, 5);
+        brow.setStrokeColor(Color.BLACK);
+        brow.setFilled(true);
+        brow.setFillColor(Color.BLACK);
+        getGraphics().add(brow);
     }
 
 
