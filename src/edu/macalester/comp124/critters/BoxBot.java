@@ -13,7 +13,7 @@ public class BoxBot extends Critter {
             strokeColor = new Color(40, 40, 60),
             fillColor   = new Color(160, 172, 182);
 
-    
+
     @Override
     protected void buildGraphics() {
         //
@@ -28,19 +28,19 @@ public class BoxBot extends Critter {
         leftLeg.setFilled(true);
         leftLeg.setFillColor(fillColor);
         addLeg(new Leg(leftLeg, 2));   // this leg will be animated when running CritterProgram
-        
+
         Rectangle rightLeg = new Rectangle( 6, 0, 10, 40);
         rightLeg.setStrokeColor(strokeColor);
         rightLeg.setFilled(true);
         rightLeg.setFillColor(fillColor);
         addLeg(new Leg(rightLeg, 2));   // this leg will be animated when running CritterProgram
-        
+
         Rectangle body = new Rectangle(-20, -30, 40, 40);
         body.setStrokeColor(strokeColor);
         body.setFilled(true);
         body.setFillColor(fillColor);
         getGraphics().add(body);
-        
+
         Rectangle head = new Rectangle(-18, -56, 36, 20);
         head.setStrokeColor(strokeColor);
         head.setFilled(true);

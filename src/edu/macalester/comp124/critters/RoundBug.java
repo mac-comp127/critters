@@ -10,7 +10,7 @@ import java.awt.*;
  * @author Paul Cantrell
  */
 public class RoundBug extends Critter {
-    
+
     @Override
     protected void buildGraphics() {
         // these offsets are designed to be added to the location of initial placement

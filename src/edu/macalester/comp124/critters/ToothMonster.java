@@ -10,26 +10,28 @@ import java.awt.*;
 public class ToothMonster extends Critter{
     protected void buildGraphics() {
 
-        createAntennae(40, 40, 30, 10);
-        createAntennae(70, 40, 80, 10);
+        createAntennae(40, 60, 30, 30);
+        createAntennae(70, 60, 80, 30);
 
-        Ellipse head = new Ellipse(30, 30, 50, 30);
+        Ellipse head = new Ellipse(30, 50, 50, 30);
         head.setFillColor(new Color(100, 150, 150));
         head.setFilled(true);
         getGraphics().add(head);
 
-        createMouth(45, 50, 65, 50);
+        createMouth(45, 70, 65, 70);
 
         Eye leftEye = new Eye(10, .75, .20, Color.RED);
         Eye rightEye = new Eye(10, .75, .20, Color.GREEN);
-        addEye(leftEye, 70, 40);
-        addEye(rightEye, 40, 40);
+        addEye(leftEye, 70, 60);
+        addEye(rightEye, 40, 60);
 
-        createLeg(45, 50);
-        createLeg(55, 50);
+        createLeg(45, 70);
+        createLeg(55, 70);
 
-        createBrow(30, 25);
-        createBrow(60, 25);
+        createBrow(30, 45);
+        createBrow(60, 45);
+
+        createHat(25, 15);
 
     }
 
@@ -63,6 +65,19 @@ public class ToothMonster extends Critter{
         brow.setFilled(true);
         brow.setFillColor(Color.BLACK);
         getGraphics().add(brow);
+    }
+
+    private void createHat(double x, double y) {
+        Rectangle top = new Rectangle(x, y, 10, 10);
+        top.setStrokeColor(Color.BLACK);
+        top.setFilled(true);
+        top.setFillColor(Color.BLACK);
+        Rectangle brim = new Rectangle(x-2.5, y+10, 15, 3);
+        brim.setStrokeColor(Color.BLACK);
+        brim.setFilled(true);
+        brim.setFillColor(Color.BLACK);
+        getGraphics().add(brim);
+        getGraphics().add(top);
     }
 
 
