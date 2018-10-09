@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  * @author Paul Cantrell
  */
-public class CritterProgram {
+public class CritterParty {
     
     private static final double TARGET_FPS = 30, MIN_EFFECTIVE_FPS = 5;
     
@@ -22,9 +22,10 @@ public class CritterProgram {
     private List<Critter> critters;
     private CanvasWindow canvas;
     
-    public CritterProgram(){
+    @SuppressWarnings("InfiniteLoopStatement")
+    public CritterParty(){
         canvas = new CanvasWindow("Critters", 2500, 1680);
-        loadCritterClassess();
+        loadCritterClasses();
         critters = new ArrayList<Critter>();
         for(int n = 0; n < 50; n++)
             addNewCritter();
@@ -79,7 +80,7 @@ public class CritterProgram {
     /**
      * Finds all subclasses of Critter in this package.
      */
-    private void loadCritterClassess() {
+    private void loadCritterClasses() {
         Reflections reflections = new Reflections(getClass().getPackage().getName());
         critterClasses = new ArrayList<Class<? extends Critter>>(
             reflections.getSubTypesOf(Critter.class));
@@ -116,6 +117,6 @@ public class CritterProgram {
     }
 
     public static void main(String[] args){
-        CritterProgram prog = new CritterProgram();
+        CritterParty prog = new CritterParty();
     }
 }
