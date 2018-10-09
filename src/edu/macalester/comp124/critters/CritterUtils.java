@@ -19,9 +19,13 @@ public final class CritterUtils {
      * @param name Image name and extension
      * @return Image object with the specified image, null if not found
      */
-    public static Image fetchImageInPackage(Object instance, String name) throws URISyntaxException
+    public static Image loadCritterImage(String name)
     {
-        return new Image(0,0, Paths.get(instance.getClass().getResource("/"+ name).toURI()).toString());
+        try {
+            return new Image(0,0, Paths.get(CritterUtils.class.getResource("/"+ name).toURI()).toString());
+        } catch(URISyntaxException e) {
+            throw new IllegalArgumentException("Invalid image URI", e);
+        }
     }
 
 }
