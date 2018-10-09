@@ -27,13 +27,13 @@ public class BoxBot extends Critter {
         leftLeg.setStrokeColor(strokeColor);
         leftLeg.setFilled(true);
         leftLeg.setFillColor(fillColor);
-        addLeg(new Leg(leftLeg, 2));   // this leg will be animated when running CritterProgram
+        addLeg(new Leg(leftLeg, 2));   // this leg will be animated when running CritterParty
 
         Rectangle rightLeg = new Rectangle( 6, 0, 10, 40);
         rightLeg.setStrokeColor(strokeColor);
         rightLeg.setFilled(true);
         rightLeg.setFillColor(fillColor);
-        addLeg(new Leg(rightLeg, 2));   // this leg will be animated when running CritterProgram
+        addLeg(new Leg(rightLeg, 2));   // this leg will be animated when running CritterParty
 
         Rectangle body = new Rectangle(-20, -30, 40, 40);
         body.setStrokeColor(strokeColor);

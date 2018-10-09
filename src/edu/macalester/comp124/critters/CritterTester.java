@@ -19,7 +19,7 @@ public class CritterTester extends CanvasWindow {
         super("Critter Test", 260, 260);
 
         Rectangle targetBounds = new Rectangle(40, 40, 100, 100);
-        targetBounds.setStrokeColor(new Color(0, 0, 0, 0.2f));
+        targetBounds.setStrokeColor(new Color(0, 0, 0, 0.1f));
         targetBounds.setStrokeWidth(3);
         add(targetBounds);
 
