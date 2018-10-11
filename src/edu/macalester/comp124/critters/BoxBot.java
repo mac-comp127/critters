@@ -52,7 +52,4 @@ public class BoxBot extends Critter {
         addEye(leftEye, -10, -46);
         addEye(rightEye, 10, -46);
     }
-
-
-
 }
