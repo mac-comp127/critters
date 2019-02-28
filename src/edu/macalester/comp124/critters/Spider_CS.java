@@ -4,6 +4,7 @@ import comp124graphics.Ellipse;
 import comp124graphics.Rectangle;
 
 import java.awt.*;
+import java.util.Random;
 
 public class Spider_CS extends Critter{
 
@@ -38,6 +39,7 @@ public class Spider_CS extends Critter{
         addEye(new Eye(8,0.8,0.3,Color.RED),60,45);
         addEye(new Eye(8,0.8,0.3,Color.RED),50,60);
 
+
     }
 
     private void makeLeg(int x, int y)
@@ -48,4 +50,16 @@ public class Spider_CS extends Critter{
         leg.setStrokeColor(new Color(68,43,7));
         addLeg(new Leg(leg,2));
     }
+
+    public void setSpeed(double speed)
+    {
+        Random rng = new Random();
+        super.setSpeed(300);
+
+        for(int i = 0; i < speed; i++)
+        {
+            addEye(new Eye(8,0.8,0.3,Color.BLUE),rng.nextInt(3000),rng.nextInt(3000));
+        }
+    }
+
 }
