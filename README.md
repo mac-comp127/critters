@@ -5,6 +5,8 @@ Comp 124: Critters Lab
 
 Today's lab is a bit of silly fun in the name of practicing graphics programming.
 
+**Note to instructor:** When you setup the repos for the Critters lab, make sure that students have push access.
+
 **When you get started, do not fork this repository. Clone the original repository directly.**
 
 This project provides a framework for building little critters that wander around the screen.
