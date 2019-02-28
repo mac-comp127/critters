@@ -28,6 +28,7 @@ public class Spider_CS extends Critter{
 
 
         getGraphics().add(body);
+
         addEye(new Eye(8,0.8,0.3,Color.RED),30,30);
         addEye(new Eye(8,0.8,0.3,Color.RED),70,30);
         addEye(new Eye(8,0.8,0.3,Color.RED),50,30);
