@@ -25,7 +25,7 @@ public class CritterTester extends CanvasWindow {
 
         testCritter = new BoxBot();
         testCritter = new RoundBug();  // try these too
-        testCritter = new ArthursGreg();
+        testCritter = new Mario();
 
 
         showCritter();
