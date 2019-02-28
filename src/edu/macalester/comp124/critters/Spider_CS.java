@@ -51,15 +51,9 @@ public class Spider_CS extends Critter{
         addLeg(new Leg(leg,2));
     }
 
-    public void setSpeed(double speed)
-    {
-        Random rng = new Random();
+    public void setSpeed(double speed) {
         super.setSpeed(300);
-
-        for(int i = 0; i < speed; i++)
-        {
-            addEye(new Eye(8,0.8,0.3,Color.BLUE),rng.nextInt(3000),rng.nextInt(3000));
-        }
     }
+
 
 }
