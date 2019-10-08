@@ -1,8 +1,8 @@
-package edu.macalester.comp124.critters;
+package edu.macalester.comp127.critters;
 
-import comp124graphics.Rectangle;
+import comp127graphics.Rectangle;
 
-import java.awt.Color;
+import java.awt.*;
 
 /**
  * @author Paul Cantrell
@@ -11,7 +11,7 @@ public class BoxBot extends Critter {
 
     private static final Color
             strokeColor = new Color(40, 40, 60),
-            fillColor   = new Color(160, 172, 182);
+            fillColor = new Color(160, 172, 182);
 
 
     @Override
@@ -23,13 +23,13 @@ public class BoxBot extends Critter {
         xOffset = 20.0;
         yOffset = 56.0;
 
-        Rectangle leftLeg  = new Rectangle(-16, 0, 10, 40);
+        Rectangle leftLeg = new Rectangle(-16, 0, 10, 40);
         leftLeg.setStrokeColor(strokeColor);
         leftLeg.setFilled(true);
         leftLeg.setFillColor(fillColor);
         addLeg(new Leg(leftLeg, 2));   // this leg will be animated when running CritterParty
 
-        Rectangle rightLeg = new Rectangle( 6, 0, 10, 40);
+        Rectangle rightLeg = new Rectangle(6, 0, 10, 40);
         rightLeg.setStrokeColor(strokeColor);
         rightLeg.setFilled(true);
         rightLeg.setFillColor(fillColor);

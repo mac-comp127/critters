@@ -1,6 +1,6 @@
-package edu.macalester.comp124.critters;
+package edu.macalester.comp127.critters;
 
-import comp124graphics.GraphicsGroup;
+import comp127graphics.GraphicsGroup;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -24,11 +24,11 @@ public abstract class Critter {
     // See BoxBot and RoundBug for examples.
     protected double xOffset = 0.0;
     protected double yOffset = 0.0;
-    
+
     public Critter() {
         eyes = new ArrayList<Eye>();
         legs = new ArrayList<Leg>();
-        graphics = new GraphicsGroup(0,0);
+        graphics = new GraphicsGroup(0, 0);
         buildGraphics();
     }
 
@@ -36,22 +36,20 @@ public abstract class Critter {
      * @return the underlying graphics component.
      */
     public GraphicsGroup getGraphics() {
-         return graphics;
+        return graphics;
     }
 
     /**
-     *
      * @return the amount to offset the initial location of the graphic
-     *         in the x direction when using setLocation.
+     * in the x direction when using setLocation.
      */
     public double getxOffset() {
         return xOffset;
     }
 
     /**
-     *
      * @return the amount to offset the initial location of the graphic
-     *         in the y direction when using setLocation.
+     * in the y direction when using setLocation.
      */
     public double getyOffset() {
         return yOffset;
@@ -69,11 +67,11 @@ public abstract class Critter {
     public double getSpeed() {
         return speed;
     }
-    
+
     public void setSpeed(double speed) {
         this.speed = speed;
     }
-    
+
     public Point.Double getGoal() {
         return goal;
     }
@@ -84,26 +82,27 @@ public abstract class Critter {
 
     public void moveTowardsGoal(double dt) {
         double dx = goal.getX() - getGraphics().getX(),
-               dy = goal.getY() - getGraphics().getY(),
-               dist = Math.hypot(dx, dy);
+                dy = goal.getY() - getGraphics().getY(),
+                dist = Math.hypot(dx, dy);
         moveBy(
-            dx * getSpeed() / dist,
-            dy * getSpeed() / dist,
-            dt);
+                dx * getSpeed() / dist,
+                dy * getSpeed() / dist,
+                dt);
     }
 
     public void moveBy(double dx, double dy, double dt) {
-        graphics.move(dx * dt, dy * dt);
-        
-        for(Eye eye : eyes)
+        graphics.moveBy(dx * dt, dy * dt);
+
+        for (Eye eye : eyes)
             eye.lookInDirectionOf(dx, dy, dt);
-        
-        for(Leg leg : legs)
+
+        for (Leg leg : legs)
             leg.bodyMovedBy(dx * dt, dy * dt);
     }
 
     /**
      * Adds a leg to the critter.
+     *
      * @param leg
      */
     protected void addLeg(Leg leg) {
@@ -114,6 +113,7 @@ public abstract class Critter {
 
     /**
      * Adds an eye to the critter.
+     *
      * @param eye
      */
     protected void addEye(Eye eye, int x, int y) {

@@ -1,11 +1,12 @@
-package edu.macalester.comp124.critters;
+package edu.macalester.comp127.critters;
 
-import java.awt.Color;
+import comp127graphics.CanvasWindow;
+import comp127graphics.GraphicsGroup;
+import comp127graphics.Point;
+import comp127graphics.Rectangle;
+
+import java.awt.*;
 import java.awt.geom.Point2D;
-
-import comp124graphics.CanvasWindow;
-import comp124graphics.GraphicsGroup;
-import comp124graphics.Rectangle;
 
 
 /**
@@ -24,9 +25,8 @@ public class CritterTester extends CanvasWindow {
         add(targetBounds);
 
         testCritter = new BoxBot();
-        testCritter = new RoundBug();  // try these too
-        testCritter = new Mario();
-        testCritter = new AleCritter();
+       // testCritter = new RoundBug();  // try these too
+       // testCritter = new Mario();
 
 
         showCritter();
@@ -42,20 +42,20 @@ public class CritterTester extends CanvasWindow {
     @SuppressWarnings("InfiniteLoopStatement")
     public void run() {
         testCritter.setSpeed(10);
-        Point2D.Double center = testCritter.getGraphics().getPosition();
+        Point center = testCritter.getGraphics().getPosition();
         double t = 0;
-        while(true) {
+        while (true) {
             testCritter.setGoal(new Point2D.Double(
-                center.x + Math.cos(t) * 5 + 5,
-                center.y + Math.sin(t) * 5 + 5));
+                    center.getX() + Math.cos(t) * 5 + 5,
+                    center.getY() + Math.sin(t) * 5 + 5));
             testCritter.moveTowardsGoal(0.05);
 
-            pause(50);
-            t = (t + 0.1) % (Math.PI*2);
+            //pause(50);
+            t = (t + 0.1) % (Math.PI * 2);
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         CritterTester test = new CritterTester();
     }
 }

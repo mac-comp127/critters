@@ -1,8 +1,9 @@
-package edu.macalester.comp124.critters;
+package edu.macalester.comp127.critters;
 
-import comp124graphics.Ellipse;
-import comp124graphics.GraphicsGroup;
-import comp124graphics.GraphicsObject;
+import comp127graphics.Ellipse;
+import comp127graphics.GraphicsGroup;
+import comp127graphics.GraphicsObject;
+import comp127graphics.Point;
 
 import java.awt.*;
 
@@ -12,11 +13,12 @@ import java.awt.*;
 public class Eye {
     private final GraphicsObject graphics;
     private final GraphicsObject pupil;
-    private final Point.Double pupilRestPosition;
+    private final comp127graphics.Point pupilRestPosition;
     private final double radius;
 
     /**
      * Creates a white eye with a black pupil, a white ocular highlight, and a colored iris.
+     *
      * @param r             Eye radius
      * @param pupilSize     Proportion of the pupil radius to the eye radius
      * @param highlightSize Proportion of the highlight radius to the eye radius
@@ -30,8 +32,8 @@ public class Eye {
         white.setFillColor(Color.WHITE);
 
         // Create the pupil.
-        GraphicsGroup pupil = new GraphicsGroup(0,0);
-        
+        GraphicsGroup pupil = new GraphicsGroup(0, 0);
+
         double pupilR = r * pupilSize;
         Ellipse pupilMain = new Ellipse(-pupilR, -pupilR, pupilR * 2, pupilR * 2);
         pupilMain.setFilled(true);
@@ -46,8 +48,8 @@ public class Eye {
         highlight.setFilled(true);
         highlight.setFillColor(new Color(255, 255, 255, 200));
         pupil.add(highlight);
-        
-        GraphicsGroup group = new GraphicsGroup(0,0);
+
+        GraphicsGroup group = new GraphicsGroup(0, 0);
         group.add(white);
         group.add(pupil);
 
@@ -56,7 +58,7 @@ public class Eye {
         pupilRestPosition = pupil.getPosition();
         this.radius = r - pupilR - 2;
     }
-    
+
     /**
      * Creates a new eye with custom graphics. The given pupil object with move on the edge of a circle
      * centered about its current location.
@@ -71,7 +73,7 @@ public class Eye {
     public GraphicsObject getGraphics() {
         return graphics;
     }
-    
+
     /**
      * Causes the eyes to move in the direction of the given vector.
      * The dt parameter is necessary because the eyes do not move instantaneously.
@@ -80,9 +82,9 @@ public class Eye {
         double dist = Math.hypot(dx, dy);
         dx /= dist;
         dy /= dist;
-        Point.Double loc = pupil.getPosition();
+        Point loc = pupil.getPosition();
         pupil.setPosition(
-            CritterUtils.blend(loc.getX(), pupilRestPosition.getX() + radius * dx, Math.pow(0.05, dt)),
-            CritterUtils.blend(loc.getY(), pupilRestPosition.getY() + radius * dy, Math.pow(0.05, dt)));
+                CritterUtils.blend(loc.getX(), pupilRestPosition.getX() + radius * dx, Math.pow(0.05, dt)),
+                CritterUtils.blend(loc.getY(), pupilRestPosition.getY() + radius * dy, Math.pow(0.05, dt)));
     }
 }
