@@ -5,7 +5,7 @@ import comp127graphics.GraphicsGroup;
 import comp127graphics.Point;
 import comp127graphics.Rectangle;
 
-import java.awt.*;
+import java.awt.Color;
 import java.awt.geom.Point2D;
 
 
@@ -41,7 +41,7 @@ public class CritterTester {
     }
 
     @SuppressWarnings("InfiniteLoopStatement")
-    public void run() {
+    private void run() {
         testCritter.setSpeed(10);
         Point center = testCritter.getGraphics().getPosition();
         double t = 0;

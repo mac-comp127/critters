@@ -1,10 +1,9 @@
 package edu.macalester.comp127.critters;
 
-import comp127graphics.*;
 import comp127graphics.Image;
 import comp127graphics.Rectangle;
 
-import java.awt.*;
+import java.awt.Color;
 
 
 public class Mario extends Critter {

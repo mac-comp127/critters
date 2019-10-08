@@ -2,7 +2,7 @@ package edu.macalester.comp127.critters;
 
 import comp127graphics.Rectangle;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * @author Paul Cantrell

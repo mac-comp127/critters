@@ -4,7 +4,7 @@ import comp127graphics.CanvasWindow;
 import comp127graphics.GraphicsObject;
 import org.reflections.Reflections;
 
-import java.awt.*;
+import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class CritterParty {
     public CritterParty() {
         canvas = new CanvasWindow("Critters", 2500, 1680);
         loadCritterClasses();
-        critters = new ArrayList<Critter>();
+        critters = new ArrayList<>();
         for (int n = 0; n < 50; n++)
             addNewCritter();
 
@@ -60,7 +60,7 @@ public class CritterParty {
     private Critter createRandomCritter() {
         Class<? extends Critter> critterClass = critterClasses.get(rand.nextInt(critterClasses.size()));
         try {
-            return critterClass.newInstance();
+            return critterClass.getConstructor().newInstance();
         } catch (Exception e) {
             throw new RuntimeException("Cannot instantiate " + critterClass, e);
         }
@@ -84,8 +84,8 @@ public class CritterParty {
      */
     private void loadCritterClasses() {
         Reflections reflections = new Reflections(getClass().getPackage().getName());
-        critterClasses = new ArrayList<Class<? extends Critter>>(
-                reflections.getSubTypesOf(Critter.class));
+        critterClasses = new ArrayList<>(
+            reflections.getSubTypesOf(Critter.class));
     }
 
     /**
@@ -119,6 +119,6 @@ public class CritterParty {
     }
 
     public static void main(String[] args) {
-        CritterParty prog = new CritterParty();
+        new CritterParty();
     }
 }

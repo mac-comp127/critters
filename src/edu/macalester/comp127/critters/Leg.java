@@ -3,11 +3,10 @@ package edu.macalester.comp127.critters;
 import comp127graphics.GraphicsObject;
 import comp127graphics.Point;
 
-import java.awt.*;
-
 /**
  * @author Paul Cantrell
  */
+@SuppressWarnings("WeakerAccess")
 public class Leg {
     private final GraphicsObject graphics;
     private final comp127graphics.Point restPosition;

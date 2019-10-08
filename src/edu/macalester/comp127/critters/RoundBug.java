@@ -4,7 +4,7 @@ import comp127graphics.Ellipse;
 import comp127graphics.GraphicsGroup;
 import comp127graphics.Line;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * @author Paul Cantrell

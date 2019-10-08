@@ -5,6 +5,7 @@ import comp127graphics.Image;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
 
+@SuppressWarnings("WeakerAccess")
 public final class CritterUtils {
 
     /**

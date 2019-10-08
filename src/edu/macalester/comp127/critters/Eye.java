@@ -5,11 +5,12 @@ import comp127graphics.GraphicsGroup;
 import comp127graphics.GraphicsObject;
 import comp127graphics.Point;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * @author Paul Cantrell
  */
+@SuppressWarnings("WeakerAccess")
 public class Eye {
     private final GraphicsObject graphics;
     private final GraphicsObject pupil;
@@ -23,7 +24,6 @@ public class Eye {
      * @param pupilSize     Proportion of the pupil radius to the eye radius
      * @param highlightSize Proportion of the highlight radius to the eye radius
      * @param iris          Color of the iris
-     * @return
      */
     public Eye(double r, double pupilSize, double highlightSize, Color iris) {
         // Create the iris

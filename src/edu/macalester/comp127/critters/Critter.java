@@ -2,7 +2,7 @@ package edu.macalester.comp127.critters;
 
 import comp127graphics.GraphicsGroup;
 
-import java.awt.*;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +12,7 @@ import java.util.List;
  *
  * @author Paul Cantrell
  */
+@SuppressWarnings("WeakerAccess")
 public abstract class Critter {
     private final GraphicsGroup graphics;
     private double speed;
@@ -26,8 +27,8 @@ public abstract class Critter {
     protected double yOffset = 0.0;
 
     public Critter() {
-        eyes = new ArrayList<Eye>();
-        legs = new ArrayList<Leg>();
+        eyes = new ArrayList<>();
+        legs = new ArrayList<>();
         graphics = new GraphicsGroup(0, 0);
         buildGraphics();
     }
@@ -102,8 +103,6 @@ public abstract class Critter {
 
     /**
      * Adds a leg to the critter.
-     *
-     * @param leg
      */
     protected void addLeg(Leg leg) {
         getGraphics().add(leg.getGraphics());
@@ -113,8 +112,6 @@ public abstract class Critter {
 
     /**
      * Adds an eye to the critter.
-     *
-     * @param eye
      */
     protected void addEye(Eye eye, int x, int y) {
         eye.getGraphics().setPosition(x, y);
