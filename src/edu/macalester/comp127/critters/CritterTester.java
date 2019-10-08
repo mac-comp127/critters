@@ -51,6 +51,7 @@ public class CritterTester {
                     center.getY() + Math.sin(t) * 5 + 5));
             testCritter.moveTowardsGoal(0.05);
 
+            canvas.draw();
             canvas.pause(50);
             t = (t + 0.1) % (Math.PI * 2);
         }

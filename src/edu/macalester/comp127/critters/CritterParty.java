@@ -39,6 +39,7 @@ public class CritterParty {
             moveCritters(dt);
 
             prevFrameTime = frameTime;
+            canvas.draw();
             canvas.pause(1000 / TARGET_FPS);
         }
     }
