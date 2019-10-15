@@ -25,7 +25,7 @@ public class Mario extends Critter {
         rightLeg.setFillColor(fillColor);
         addLeg(new Leg(rightLeg, 4));
 
-        Image mario = CritterUtils.loadCritterImage("Mario.png");
+        Image mario = new Image(0, 0, "Mario.png");
         getGraphics().add(mario);
 
         addEye(new Eye(3.6, 0.26, 0.18, Color.RED), 31, 26);
