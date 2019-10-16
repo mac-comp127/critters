@@ -27,7 +27,7 @@ public class CritterTester {
 
         testCritter = new BoxBot();
        // testCritter = new RoundBug();  // try these too
-       // testCritter = new Mario();
+        testCritter = new Mario();
 
 
         showCritter();
