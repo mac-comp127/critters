@@ -34,7 +34,9 @@ We hope that you will be able to finish at least one new critter of your own inv
 
 Once you have a new Critter working and **thoroughly tested**, then:
 * Right-click on the CritterTester and do Git → Revert, to make sure you are NOT committing your changes to the tester. Make sure you **only revert changes to CritterTester**. Don’t lose your work!
+
     > 🚨 Warning: 🚨 When IntelliJ says “revert,” it means something completely different from just about every other git client in the world. In IntelliJ, ”revert” means “discard uncommitted changes.” Most other git clients either call this “discard changes” or “hard reset.” There is also an official git (not IntelliJ) feature called “git revert,” but it does something totally different and **you rarely want to use it**. Be warned!
+
 * Now pull other people's changes by right-clicking on the whole repository and choosing Git → Repository → Pull. 
 * Finally, push your changes. Do this by right-clicking on the whole repository and using Git → Commit and Push.
 
