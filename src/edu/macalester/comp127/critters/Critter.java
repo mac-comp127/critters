@@ -1,6 +1,6 @@
 package edu.macalester.comp127.critters;
 
-import comp127graphics.GraphicsGroup;
+import edu.macalester.graphics.GraphicsGroup;
 
 import java.awt.Point;
 import java.util.ArrayList;

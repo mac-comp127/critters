@@ -1,7 +1,7 @@
 package edu.macalester.comp127.critters;
 
-import comp127graphics.GraphicsObject;
-import comp127graphics.Point;
+import edu.macalester.graphics.GraphicsObject;
+import edu.macalester.graphics.Point;
 
 /**
  * @author Paul Cantrell
@@ -9,7 +9,7 @@ import comp127graphics.Point;
 @SuppressWarnings("WeakerAccess")
 public class Leg {
     private final GraphicsObject graphics;
-    private final comp127graphics.Point restPosition;
+    private final edu.macalester.graphics.Point restPosition;
     private double rangeOfMotion;
     private boolean anchored;
 

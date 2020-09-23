@@ -1,7 +1,7 @@
 package edu.macalester.comp127.critters;
 
-import comp127graphics.Image;
-import comp127graphics.Rectangle;
+import edu.macalester.graphics.Image;
+import edu.macalester.graphics.Rectangle;
 
 import java.awt.Color;
 

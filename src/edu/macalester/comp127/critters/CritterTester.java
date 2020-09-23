@@ -1,9 +1,9 @@
 package edu.macalester.comp127.critters;
 
-import comp127graphics.CanvasWindow;
-import comp127graphics.GraphicsGroup;
-import comp127graphics.Point;
-import comp127graphics.Rectangle;
+import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsGroup;
+import edu.macalester.graphics.Point;
+import edu.macalester.graphics.Rectangle;
 
 import java.awt.Color;
 import java.awt.geom.Point2D;

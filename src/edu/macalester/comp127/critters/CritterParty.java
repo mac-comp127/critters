@@ -1,7 +1,7 @@
 package edu.macalester.comp127.critters;
 
-import comp127graphics.CanvasWindow;
-import comp127graphics.GraphicsObject;
+import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsObject;
 import org.reflections.Reflections;
 
 import java.awt.Point;
@@ -110,7 +110,7 @@ public class CritterParty {
     private Point.Double randLocationInRange(GraphicsObject g) {
         double maxRange = 500.0;
         Rectangle2D bounds = g.getBounds();
-        comp127graphics.Point p0 = g.getPosition();
+        edu.macalester.graphics.Point p0 = g.getPosition();
         double dx = rand.nextDouble() * (2.0 * maxRange) - maxRange;
         double dy = rand.nextDouble() * (2.0 * maxRange) - maxRange;
         Point.Double p = new Point.Double(p0.getX() + dx, p0.getY() + dy);

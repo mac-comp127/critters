@@ -1,9 +1,9 @@
 package edu.macalester.comp127.critters;
 
-import comp127graphics.Ellipse;
-import comp127graphics.GraphicsGroup;
-import comp127graphics.GraphicsObject;
-import comp127graphics.Point;
+import edu.macalester.graphics.Ellipse;
+import edu.macalester.graphics.GraphicsGroup;
+import edu.macalester.graphics.GraphicsObject;
+import edu.macalester.graphics.Point;
 
 import java.awt.Color;
 
@@ -14,7 +14,7 @@ import java.awt.Color;
 public class Eye {
     private final GraphicsObject graphics;
     private final GraphicsObject pupil;
-    private final comp127graphics.Point pupilRestPosition;
+    private final edu.macalester.graphics.Point pupilRestPosition;
     private final double radius;
 
     /**
