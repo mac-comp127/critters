@@ -6,7 +6,6 @@ import edu.macalester.graphics.Point;
 import edu.macalester.graphics.Rectangle;
 
 import java.awt.Color;
-import java.awt.geom.Point2D;
 
 
 /**
@@ -46,7 +45,7 @@ public class CritterTester {
         Point center = testCritter.getGraphics().getPosition();
         double t = 0;
         while (true) {
-            testCritter.setGoal(new Point2D.Double(
+            testCritter.setGoal(new Point(
                     center.getX() + Math.cos(t) * 5 + 5,
                     center.getY() + Math.sin(t) * 5 + 5));
             testCritter.moveTowardsGoal(0.05);

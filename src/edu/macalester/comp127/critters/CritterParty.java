@@ -1,15 +1,15 @@
 package edu.macalester.comp127.critters;
 
-import edu.macalester.graphics.CanvasWindow;
-import edu.macalester.graphics.GraphicsObject;
-import org.reflections.Reflections;
-
-import java.awt.Point;
-import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import org.reflections.Reflections;
+
+import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsObject;
+import edu.macalester.graphics.Point;
 
 /**
  * @author Paul Cantrell
@@ -28,27 +28,25 @@ public class CritterParty {
         canvas = new CanvasWindow("Critters", 2500, 1680);
         loadCritterClasses();
         critters = new ArrayList<>();
-        for (int n = 0; n < 50; n++)
+        for (int n = 0; n < 60; n++)
             addNewCritter();
+        
+        canvas.onClick(event -> {
+            for (Critter critter : critters) {
+                critter.setGoal(event.getPosition());
+            }
+        });
 
-        long prevFrameTime = 0;
-        while (true) {
-            long frameTime = System.currentTimeMillis();
-            double dt = Math.min(1 / MIN_EFFECTIVE_FPS, (frameTime - prevFrameTime) / 1000.0);
-
-            moveCritters(dt);
-
-            prevFrameTime = frameTime;
-            canvas.draw();
-            canvas.pause(1000 / TARGET_FPS);
-        }
+        canvas.animate(() -> {
+            moveCritters(0.02);
+        });
     }
 
     private void addNewCritter() {
         Critter critter = createRandomCritter();
 
         GraphicsObject g = critter.getGraphics();
-        Point.Double point = randLocationFor(critter);
+        Point point = randLocationFor(critter);
         g.setPosition(point.getX(), point.getY());
         chooseNewGoal(critter);
         critter.setSpeed(rand.nextDouble() * 20 + 10);
@@ -98,24 +96,26 @@ public class CritterParty {
     /**
      * Picks a random location that will approximately fit the given graphics object within the window.
      */
-    private Point.Double randLocationFor(Critter critter) {
+    private Point randLocationFor(Critter critter) {
         GraphicsObject g = critter.getGraphics();
         Rectangle2D bounds = g.getBounds();
-        return new Point2D.Double(
+        return new Point(
                 rand.nextDouble() * (canvas.getWidth() - (bounds.getWidth() + critter.getxOffset())),
                 rand.nextDouble() * (canvas.getHeight() - (bounds.getHeight() + critter.getyOffset()))
         );
     }
 
-    private Point.Double randLocationInRange(GraphicsObject g) {
+    private Point randLocationInRange(GraphicsObject g) {
         double maxRange = 500.0;
         Rectangle2D bounds = g.getBounds();
         edu.macalester.graphics.Point p0 = g.getPosition();
         double dx = rand.nextDouble() * (2.0 * maxRange) - maxRange;
         double dy = rand.nextDouble() * (2.0 * maxRange) - maxRange;
-        Point.Double p = new Point.Double(p0.getX() + dx, p0.getY() + dy);
-        p.setLocation(Math.max(0.0, Math.min(p.getX(), canvas.getWidth() - bounds.getWidth())), Math.max(0.0, Math.min(p.getY(), canvas.getHeight() - bounds.getHeight())));
-        return p;
+        return Point.max(
+            Point.ORIGIN,
+            Point.min(
+                new Point(canvas.getWidth() - bounds.getWidth(), canvas.getHeight() - bounds.getHeight()),
+                new Point(p0.getX() + dx, p0.getY() + dy)));
     }
 
     public static void main(String[] args) {

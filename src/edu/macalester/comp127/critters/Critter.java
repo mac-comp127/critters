@@ -1,10 +1,10 @@
 package edu.macalester.comp127.critters;
 
-import edu.macalester.graphics.GraphicsGroup;
-
-import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
+
+import edu.macalester.graphics.GraphicsGroup;
+import edu.macalester.graphics.Point;
 
 /**
  * The base class for all critters.
@@ -18,7 +18,7 @@ public abstract class Critter {
     private double speed;
     private List<Eye> eyes;
     private List<Leg> legs;
-    private Point.Double goal;
+    private Point goal;
 
     // Some critters are drawn so that the upper left corner x, y, of its shape
     // might be negative. If so, these should be changed in the subclass to show that.
@@ -73,11 +73,11 @@ public abstract class Critter {
         this.speed = speed;
     }
 
-    public Point.Double getGoal() {
+    public Point getGoal() {
         return goal;
     }
 
-    public void setGoal(Point.Double goal) {
+    public void setGoal(Point goal) {
         this.goal = goal;
     }
 
