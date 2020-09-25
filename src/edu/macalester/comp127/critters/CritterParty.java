@@ -15,9 +15,6 @@ import edu.macalester.graphics.Point;
  * @author Paul Cantrell
  */
 public class CritterParty {
-
-    private static final double TARGET_FPS = 30, MIN_EFFECTIVE_FPS = 5;
-
     private final Random rand = new Random();
     private List<Class<? extends Critter>> critterClasses;
     private List<Critter> critters;
@@ -37,9 +34,7 @@ public class CritterParty {
             }
         });
 
-        canvas.animate(() -> {
-            moveCritters(0.02);
-        });
+        canvas.animate(this::moveCritters);
     }
 
     private void addNewCritter() {
