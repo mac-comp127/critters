@@ -3,20 +3,24 @@ Comp 127: Critters Lab
 
 **Acknowledgement:** Paul Cantrell developed this lab, Shilad tweaked the Eye code, Bret tweaked the default critters, Libby added x, y offsets for Critters and a test program.
 
-Today's lab is a bit of silly fun in the name of practicing graphics programming.
+Today's lab is a bit of silly fun in the name of practicing graphics programming and using inheritance.
 
-This project provides a framework for building little critters that wander around the screen.
+This project provides a framework for building little critters that wander around the screen. You will add your own critters.
+
+## Create your critter
 
 Begin by studying one of the existing critters. Take a look at BoxBot, RoundBug, and Mario as examples. Run `CritterTester` to study the individual critters. Then run `CritterParty` to see all of them wandering around together.
 
-Now create some new critters of your own! Create a new class that extends Critter, called `LastnameCritter` to make sure that your critter’s name is unique. Add a comment to the top of your Critter file with your full name.
+Now create some new critters of your own! Create a new class that extends `Critter`, called `YourLastNameCritter` (but with your actual last name) to make sure that your critter’s name is unique. Add a comment to the top of your `Critter` file with your full name.
 
 There are only three requirements for your critter:
 - Add animated legs or eyes (or both), as the example critters do.
-- Don’t make it so big that it hogs the screen.
+- Don’t make it so big that it hogs the screen. Play nice with the other critters.
 - Have fun!
 
-Test your new type of Critter using `CritterTester`. Change it to create one of your type of Critter rather than one of the examples. Design your critter so that it approximately fits within the grey guide box that `CritterTester` draws.
+Test your new type of Critter using `CritterTester`. Change it to create one of your type of Critter rather than one of the examples.
+
+Design your critter so that it approximately fits within the grey guide box that `CritterTester` draws.
 
 **Important notes:** 
 
@@ -30,14 +34,20 @@ Test your new type of Critter using `CritterTester`. Change it to create one of 
 
 The code in `CritterParty` is written to automatically detect new critters, but does so randomly, so it is best to only use this once you have your new Critter drawing properly in the `CritterTester`.
 
-We hope that you will be able to finish at least one new critter of your own invention!
+We hope that you will be able to finish at least one new critter of your own invention during lab time!
+
+## Share your critter
 
 Once you have a new Critter working and **thoroughly tested**, then:
-* Right-click on the CritterTester and do Git → Revert, to make sure you are NOT committing your changes to the tester. Make sure you **only revert changes to CritterTester**. Don’t lose your work!
 
-    > 🚨 Warning: 🚨 When IntelliJ says “revert,” it means something completely different from just about every other git client in the world. In IntelliJ, ”revert” means “discard uncommitted changes.” Most other git clients either call this “discard changes” or “hard reset.” There is also an official git (not IntelliJ) feature called “git revert,” but it does something totally different and **you rarely want to use it**. Be warned!
+- Open your project in Github Desktop, and…
+- …**BEFORE YOU COMMIT ANYTHING**, uncheck the checkbox next to `CritterTester` so that you aren’t committing your changes to it. You can even right-click it and choose “Discard Changes” to make sure you don’t commit them. Make sure you **only discard changes to `CritterTester`**. Don’t lose your work!
 
-* Now pull other people's changes by right-clicking on the whole repository and choosing Git → Repository → Pull. 
-* Finally, push your changes. Do this by right-clicking on the whole repository and using Git → Commit and Push.
+    🚨 Warning: 🚨 If you commit any changes to `CritterTester`, you will get merge conflicts with the other students. If you accidentally committed changes to that class, **ask the instructor for help before you push!**
 
-At the end of class, we'll have a critter party on the projector.
+- Commit your code.
+- Now pull other people's critters by choosing Repository → Pull. 
+- Did any changes come in? Run `CritterParty` again to make sure everything still works.
+- Finally, push your changes by choosing Repository → Push.
+
+As the critters come in, we’ll have a class critter party on the projector.
