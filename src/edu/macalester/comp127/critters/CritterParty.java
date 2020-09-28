@@ -8,6 +8,7 @@ import java.util.Random;
 import org.reflections.Reflections;
 
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.Point;
 
@@ -15,6 +16,8 @@ import edu.macalester.graphics.Point;
  * @author Paul Cantrell
  */
 public class CritterParty {
+    private static final int CRITTER_COUNT = 60;
+
     private final Random rand = new Random();
     private List<Class<? extends Critter>> critterClasses;
     private List<Critter> critters;
@@ -27,7 +30,7 @@ public class CritterParty {
         critters = new ArrayList<>();
         for (int n = 0; n < 60; n++)
             addNewCritter();
-        
+
         canvas.onClick(event -> {
             for (Critter critter : critters) {
                 critter.setGoal(event.getPosition());
@@ -37,7 +40,7 @@ public class CritterParty {
         canvas.animate(this::moveCritters);
     }
 
-    private void addNewCritter() {
+    private Critter addNewCritter() {
         Critter critter = createRandomCritter();
 
         GraphicsObject g = critter.getGraphics();
@@ -48,6 +51,7 @@ public class CritterParty {
 
         canvas.add(critter.getGraphics());
         critters.add(critter);
+        return critter;
     }
 
     private Critter createRandomCritter() {
@@ -65,10 +69,19 @@ public class CritterParty {
 
             // Near our goal? Just time to go somewhere else? Pick a new direction!
             double distToGoal = Math.hypot(
-                    critter.getGoal().getX() - critter.getGraphics().getX(),
-                    critter.getGoal().getY() - critter.getGraphics().getY());
+                critter.getGoal().getX() - critter.getGraphics().getX(),
+                critter.getGoal().getY() - critter.getGraphics().getY());
             if (distToGoal < critter.getSize() || rand.nextDouble() < dt / 10)
                 chooseNewGoal(critter);
+        }
+
+        // Critters exit off the top
+        critters.removeIf(critter -> critter.getGraphics().getBounds().getMaxY() < 0);
+
+        // New critters march in from the bottom
+        while (critters.size() < CRITTER_COUNT) {
+            GraphicsGroup newCritterGraphics = addNewCritter().getGraphics();
+            newCritterGraphics.setY(canvas.getHeight() + newCritterGraphics.getHeight());
         }
     }
 
@@ -106,11 +119,13 @@ public class CritterParty {
         edu.macalester.graphics.Point p0 = g.getPosition();
         double dx = rand.nextDouble() * (2.0 * maxRange) - maxRange;
         double dy = rand.nextDouble() * (2.0 * maxRange) - maxRange;
-        return Point.max(
-            Point.ORIGIN,
-            Point.min(
-                new Point(canvas.getWidth() - bounds.getWidth(), canvas.getHeight() - bounds.getHeight()),
-                new Point(p0.getX() + dx, p0.getY() + dy)));
+        double forwardProgess = -bounds.getHeight() * 2 - 10;  // critters tend upward, off the top edge of the screen
+        return new Point(0, forwardProgess).add(
+            Point.max(
+                Point.ORIGIN,
+                Point.min(
+                    new Point(canvas.getWidth() - bounds.getWidth(), canvas.getHeight() - bounds.getHeight()),
+                    new Point(p0.getX() + dx, p0.getY() + dy))));
     }
 
     public static void main(String[] args) {
