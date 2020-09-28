@@ -8,8 +8,10 @@ import java.util.Random;
 import org.reflections.Reflections;
 
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.FontStyle;
 import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsObject;
+import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Point;
 
 /**
@@ -17,6 +19,7 @@ import edu.macalester.graphics.Point;
  */
 public class CritterParty {
     private static final int CRITTER_COUNT = 60;
+    private static final boolean CAPTIONS_ENABLED = false;
 
     private final Random rand = new Random();
     private List<Class<? extends Critter>> critterClasses;
@@ -57,7 +60,16 @@ public class CritterParty {
     private Critter createRandomCritter() {
         Class<? extends Critter> critterClass = critterClasses.get(rand.nextInt(critterClasses.size()));
         try {
-            return critterClass.getConstructor().newInstance();
+            Critter critter = critterClass.getConstructor().newInstance();
+            if (CAPTIONS_ENABLED) {
+                GraphicsText caption = new GraphicsText(critterClass.getSimpleName());
+                caption.setFont("Avenir Next", FontStyle.PLAIN, 11);
+                critter.getGraphics().add(caption);
+                caption.setCenter(
+                    critter.getGraphics().getCenter().getX(),
+                    critter.getGraphics().getHeight());
+            }
+            return critter;
         } catch (Exception e) {
             throw new RuntimeException("Cannot instantiate " + critterClass, e);
         }
