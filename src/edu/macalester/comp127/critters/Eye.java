@@ -14,7 +14,7 @@ import java.awt.Color;
 public class Eye {
     private final GraphicsObject graphics;
     private final GraphicsObject pupil;
-    private final edu.macalester.graphics.Point pupilRestPosition;
+    private final Point pupilRestPosition;
     private final double radius;
 
     /**
@@ -30,6 +30,7 @@ public class Eye {
         Ellipse white = new Ellipse(-r, -r, r * 2, r * 2);
         white.setFilled(true);
         white.setFillColor(Color.WHITE);
+        white.setStrokeWidth(Math.min(1, r * 0.15));
 
         // Create the pupil.
         GraphicsGroup pupil = new GraphicsGroup(0, 0);

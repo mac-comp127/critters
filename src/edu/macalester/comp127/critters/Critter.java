@@ -113,7 +113,7 @@ public abstract class Critter {
     /**
      * Adds an eye to the critter.
      */
-    protected void addEye(Eye eye, int x, int y) {
+    protected void addEye(Eye eye, double x, double y) {
         eye.getGraphics().setPosition(x, y);
         getGraphics().add(eye.getGraphics());
         eyes.add(eye);
