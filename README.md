@@ -11,7 +11,7 @@ This project provides a framework for building little critters that wander aroun
 
 Begin by studying one of the existing critters. Take a look at BoxBot, RoundBug, and Mario as examples. Run `CritterTester` to study the individual critters. Then run `CritterParty` to see all of them wandering around together.
 
-Now create some new critters of your own! Create a new class that extends `Critter`, called `YourLastNameCritter` (but with your actual last name) to make sure that your critter’s name is unique. Add a comment to the top of your `Critter` file with your full name.
+Now create some new critters of your own! Create a new class that extends `Critter`, called `<<YourGithubUsername>>Critter` (but with your actual GitHub username, with the first letter capitalized). This is to make sure that your critter’s name is unique. Add a comment to the top of your `Critter` file with your full name.
 
 There are only three requirements for your critter:
 - Add animated legs or eyes (or both), as the example critters do.
@@ -24,13 +24,14 @@ Design your critter so that it approximately fits within the grey guide box that
 
 **Important notes:** 
 
-* Add your name to your critter class name and image names to avoid git conflicts.
 * Look at the examples to see how they add the animated legs and eyes. Study how they use `addLeg(new Leg(...))`.
 * If you want to use an image, as Mario does:
     - Make sure that your image is small enough that it fits within CritterTester’s guide box.
     - Place your image in the directory called `res`, not in `src`. This is the resources directory.
-    - Load your image using `new Image(0, 0, "filename.jpg")`.
+    - Prefix the image’s filename with your GitHub username, e.g. `pcantrell-octopus.png`.
+    - Load your image like this: `new Image(0, 0, "filename.jpg")`. This will give an image you can position, resize, and add to a graphics group just like any other graphics object.
     - You should still add animated features so it looks good in the `CritterParty`. Don’t just drop in a fixed image and call it done.
+* Make sure you **add your Github username** to your critter class name **and** image names to avoid git conflicts.
 
 The code in `CritterParty` is written to automatically detect new critters, but does so randomly, so it is best to only use this once you have your new Critter drawing properly in the `CritterTester`.
 
@@ -49,5 +50,9 @@ Once you have a new Critter working and **thoroughly tested**, then:
 - Now pull other people's critters by choosing Repository → Pull. 
 - Did any changes come in? Run `CritterParty` again to make sure everything still works.
 - Finally, push your changes by choosing Repository → Push.
+
+## Repeat for extra fun!
+
+You only need to make one critter to complete the lab, but more critters make for a merrier critter party!
 
 As the critters come in, we’ll have a class critter party on the projector.
