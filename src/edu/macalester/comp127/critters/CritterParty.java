@@ -108,8 +108,8 @@ public class CritterParty {
         GraphicsObject g = critter.getGraphics();
         Rectangle2D bounds = g.getBounds();
         return new Point(
-                rand.nextDouble() * (canvas.getWidth() - (bounds.getWidth() + critter.getxOffset())),
-                rand.nextDouble() * (canvas.getHeight() - (bounds.getHeight() + critter.getyOffset()))
+            rand.nextDouble() * (canvas.getWidth() - (bounds.getWidth() + critter.getxOffset())),
+            rand.nextDouble() * (canvas.getHeight() - (bounds.getHeight() + critter.getyOffset()))
         );
     }
 

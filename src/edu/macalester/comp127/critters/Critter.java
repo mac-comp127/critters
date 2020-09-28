@@ -83,12 +83,12 @@ public abstract class Critter {
 
     public void moveTowardsGoal(double dt) {
         double dx = goal.getX() - getGraphics().getX(),
-                dy = goal.getY() - getGraphics().getY(),
-                dist = Math.hypot(dx, dy);
+               dy = goal.getY() - getGraphics().getY(),
+               dist = Math.hypot(dx, dy);
         moveBy(
-                dx * getSpeed() / dist,
-                dy * getSpeed() / dist,
-                dt);
+            dx * getSpeed() / dist,
+            dy * getSpeed() / dist,
+            dt);
     }
 
     public void moveBy(double dx, double dy, double dt) {

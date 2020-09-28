@@ -46,8 +46,8 @@ public class CritterTester {
         double t = 0;
         while (true) {
             testCritter.setGoal(new Point(
-                    center.getX() + Math.cos(t) * 5 + 5,
-                    center.getY() + Math.sin(t) * 5 + 5));
+                center.getX() + Math.cos(t) * 5 + 5,
+                center.getY() + Math.sin(t) * 5 + 5));
             testCritter.moveTowardsGoal(0.05);
 
             canvas.draw();

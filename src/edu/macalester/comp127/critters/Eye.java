@@ -85,8 +85,8 @@ public class Eye {
         dy /= dist;
         Point loc = pupil.getPosition();
         pupil.setPosition(
-                this.blend(loc.getX(), pupilRestPosition.getX() + radius * dx, Math.pow(0.05, dt)),
-                this.blend(loc.getY(), pupilRestPosition.getY() + radius * dy, Math.pow(0.05, dt)));
+            this.blend(loc.getX(), pupilRestPosition.getX() + radius * dx, Math.pow(0.05, dt)),
+            this.blend(loc.getY(), pupilRestPosition.getY() + radius * dy, Math.pow(0.05, dt)));
     }
 
     private double blend(double a, double b, double w) {

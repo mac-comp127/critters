@@ -40,14 +40,14 @@ public class Leg {
             graphics.moveBy(-dx, -dy);
         } else {
             double speed = Math.hypot(dx, dy),
-                    targetX = restPosition.getX() + dx / speed * rangeOfMotion,
-                    targetY = restPosition.getY() + dy / speed * rangeOfMotion,
-                    toTargetX = targetX - loc.getX(),
-                    toTargetY = targetY - loc.getY(),
-                    distToTarget = Math.hypot(toTargetX, toTargetY);
+                   targetX = restPosition.getX() + dx / speed * rangeOfMotion,
+                   targetY = restPosition.getY() + dy / speed * rangeOfMotion,
+                   toTargetX = targetX - loc.getX(),
+                   toTargetY = targetY - loc.getY(),
+                   distToTarget = Math.hypot(toTargetX, toTargetY);
             graphics.moveBy(
-                    toTargetX / distToTarget * speed * 1.5,
-                    toTargetY / distToTarget * speed * 1.5);
+                toTargetX / distToTarget * speed * 1.5,
+                toTargetY / distToTarget * speed * 1.5);
         }
         loc = graphics.getPosition();
 
