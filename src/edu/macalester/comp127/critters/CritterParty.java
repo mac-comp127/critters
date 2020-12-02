@@ -88,7 +88,7 @@ public class CritterParty {
         }
 
         // Critters exit off the top
-        critters.removeIf(critter -> critter.getGraphics().getBounds().getMaxY() < 0);
+        critters.removeIf(critter -> critter.getGraphics().getBoundsInParent().getMaxY() < 0);
 
         // New critters march in from the bottom
         while (critters.size() < CRITTER_COUNT) {
