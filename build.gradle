@@ -16,7 +16,7 @@ dependencies {
 }
 
 application {
-    mainClassName 'edu.macalester.comp127.critters.CritterParty'
+    mainClass = 'edu.macalester.comp127.critters.CritterParty'
 }
 
 test {
